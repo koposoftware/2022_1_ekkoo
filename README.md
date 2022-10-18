@@ -36,7 +36,7 @@
 
 | 항목      | 내용                | 내용         |
 |----------|---------------------------|------------------------------------------|
-| **이름** |구이경| ![syyoon](imgs/syyoon.jpg) |
+| **이름** |구이경| ![yk.jpg](/yk.jpg) |
 | **연락처** | ddowei92@naver.com | [깃블로그](https://yoon-ddo.github.io/) |
 | **skill set** || Frontend - HTML, CSS, Javascript<br>Backend - Java, Python, C<br>DataBase - Oracle |
 | **자격증** | 2022.05 | SQLD ( 한국데이터산업진흥원 ) |
