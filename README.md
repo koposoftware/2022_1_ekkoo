@@ -34,6 +34,16 @@
 
 본인 소개를 추가하세요
 
+| 항목      | 내용                | 내용         |
+|----------|---------------------------|------------------------------------------|
+| **이름** |구이경| ![syyoon](imgs/syyoon.jpg) |
+| **연락처** | ddowei92@naver.com | [깃블로그](https://yoon-ddo.github.io/) |
+| **skill set** || Frontend - HTML, CSS, Javascript<br>Backend - Java, Python, C<br>DataBase - Oracle |
+| **자격증** | 2022.05 | SQLD ( 한국데이터산업진흥원 ) |
+| **교육이력** | 2022.03 ~ 2022.10 | 하나금융티아이 채용전환형 교육 1200시간( 한국폴리텍대학교 광명융합기술교육원 - 데이터분석과 ) |
+
+
+
 |이름 |고길동|![gdKO](/gdko.jpg)|
 |연락처 | gdko(@)kopo.ac.kr|
 |skill set| Frontend - HTML, CSS, Javascript|
