@@ -9,7 +9,8 @@
 # 2. 프로젝트 제안서
 
 하나원큐레이터의 초기 프로젝트 제안 발표 자료입니다.
-[제안발표자료<img src="img/cover1.jpg"/>](/하나원큐레이터_제안발표.pptx)<br>
+   <img src="img/ppt_cover1.jpg" width="640" /><br>
+   [제안발표자료](/하나원큐레이터_제안발표.pptx)<br>
 <br> <br> 
   <iframe width="424" height="238" src="https://www.youtube.com/embed/reOGfxYJre0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
