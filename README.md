@@ -1,4 +1,4 @@
-# 프로젝트 제목
+# 자산관리부터 재무설계까지 원큐에, 하나원큐레이터
 
 [프로젝트 홈페이지 - https://koposoftware.github.io/finalproject_template/](https://koposoftware.github.io/finalproject_template/)
 
