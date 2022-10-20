@@ -17,7 +17,7 @@
 
 # 3. 프로젝트 결과
 프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.
-   <img src="architecture.png"/><br>
+   <img src="img/시스템아키텍처.png"/><br>
    
    <img src="erd.JPG"/><br>
 ## 발표 ppt 
