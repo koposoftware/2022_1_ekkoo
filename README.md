@@ -51,10 +51,10 @@
 ## * ERD
    <img src="erd.JPG"/><br>
 ## * 시스템 아키텍쳐
-   <img src="img/system_architecture.png"/><br>
+   <img src="img/system_architecture.png" width="640"/><br>
    
 ## * 서비스 아키텍쳐
-   <img src="img/service_architecture.png"/><br>
+   <img src="img/service_architecture.png" width="640"/><br>
      
 # 4. OpenAPI 제작
 하나원큐레이터의 재무설계시, 자동으로 나의 신용정보를 불러오는 기능을 구현하기 위해 가상의 홈택스 OpenAPI를 개발/서버 구축/배포를 하였습니다.<br> 
