@@ -41,13 +41,13 @@
 
 
 ## * 개발환경
-- OS : Window10, Linux CentOS7
-- Framework : Spring Framework 4, Mybatis
+- OS : Window10, Oracle Linux
+- Framework : Spring Framework, Mybatis
 - Server : Apache Tomcat9
-- Language : Java(jdk-1.8), Javascript, HTML, CSS, R
-- IDE Tools : Eclipse, Sqldeveloper, R-studio
-- DB : Oracle 11g, HyperSQL 2.5.0
-- Library : jQuery, iQuery-UI, JSTL, Bootstrap-4.3.1
+- Language : Java(jdk-1.8), Python, Javascript, HTML, CSS 
+- IDE Tools : Eclipse, Sqldeveloper
+- DB : Oracle 19c
+- Library : jQuery, JSTL, Bootstrap, Datatables
 
 ## * ERD
 
