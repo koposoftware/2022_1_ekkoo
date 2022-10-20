@@ -57,9 +57,7 @@
    <img src="img/service_architecture.png"/><br>
      
 # 4. OpenAPI 제작
-하나원큐레이터의 재무설계시, 자동으로 나의 신용정보를 불러오는 기능을 구현하기 위해 가상의 홈택스 OpenAPI를 개발/서버 구축/배포를 하였습니다.
-
-OpenAPI 사용 명세서 입니다
+하나원큐레이터의 재무설계시, 자동으로 나의 신용정보를 불러오는 기능을 구현하기 위해 가상의 홈택스 OpenAPI를 개발/서버 구축/배포를 하였습니다.<br> 
 <img src="img/api.png" width="640"/><br> 
  
 # 5. 본인 소개
