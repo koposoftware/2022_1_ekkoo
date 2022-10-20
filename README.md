@@ -74,27 +74,13 @@
 
 | 항목      | 내용                | 내용         |
 |----------|---------------------------|------------------------------------------|
-| **이름** |구이경| ![yk.jpg](/yk.jpg) |
+| **이름** |구이경| ![yk.jpg](img/yk.jpg) |
 | **연락처** | ddowei92@naver.com | [깃블로그](https://yoon-ddo.github.io/) |
 | **skill set** || Frontend - HTML, CSS, Javascript<br>Backend - Java, Python, C<br>DataBase - Oracle |
 | **자격증** | 2022.05 | SQLD ( 한국데이터산업진흥원 ) |
 | **교육이력** | 2022.03 ~ 2022.10 | 하나금융티아이 채용전환형 교육 1200시간( 한국폴리텍대학교 광명융합기술교육원 - 데이터분석과 ) |
+| **어학능력** | TOEIC 860 |
 
 
-
-|이름 |고길동|![gdKO](/gdko.jpg)|
-|연락처 | gdko(@)kopo.ac.kr|
-|skill set| Frontend - HTML, CSS, Javascript|
-| | Backend - Java, Spring, Oracle|
-|자격증| 20xx년 정보처리기사 |
-|| 20xx년 빅데이터분석기사 |
-|| 20xx년 SQLD |
-|| 20xx년 ADsP |
-|수상| 20xx년 ICT 멘토링 프로젝트 대상 수상 (과학기술정보통신부 지원)  |
-| | 20xx년 한국폴리텍대학 벤처창업아이템경진대회 대상 수상 (고용노동부 후원)  |
-| | 20xx년 금융데이터경진대회 금상 수상|
-| | 20xx년 대학생 논문 경진대회 은상 수상|
-|특기사항|  TOEIC 990 |
-||  리니지 만랩 |
 
 
