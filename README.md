@@ -16,11 +16,11 @@
   <iframe width="424" height="238" src="https://www.youtube.com/embed/reOGfxYJre0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 3. 프로젝트 결과
-프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.
-   ###시스템 아키텍처
+프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.<br>
+   [시스템 아키텍처]
    <img src="img/system_architecture.png"/><br>
    
-   ###서비스 아키텍처
+   [서비스 아키텍처]
    <img src="img/service_architecture.png"/><br>
    
    <img src="erd.JPG"/><br>
