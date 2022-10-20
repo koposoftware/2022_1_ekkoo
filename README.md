@@ -16,11 +16,45 @@
   <iframe width="424" height="238" src="https://www.youtube.com/embed/reOGfxYJre0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 3. 프로젝트 결과
-프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.<br>
-   [시스템 아키텍처]
+최종 프로젝트 결과입니다.
+## * 발표 ppt 
+   <img src="cover2.jpg" width="640" /><br>
+   [최종발표자료](/하나원큐레이터_최종발표.pptx)<br>
+## * 시연 동영상
+
+# 4. 프로젝트 결과 요약
+
+## * 수행기간
+   2022-09-16 ~ 2022-10-24
+
+## * 담당업무
+   하나원큐레이터 프로젝트 설계 및 제작, Front-End/Back-End 개발
+
+## * 주요기능
+   
+
+## * 사용기술
+- Spring-MVC 패턴
+- Hometax OpenAPI 설계,제작,배포 
+- Spring MailSender, CoolSMS API를 사용한 이메일, 문자 알림
+- Spring Scheduler와 Spring Jsoup을 활용한 주식 평가금 실시간 업데이트
+
+
+## * 개발환경
+- OS : Window10, Linux CentOS7
+- Framework : Spring Framework 4, Mybatis
+- Server : Apache Tomcat9
+- Language : Java(jdk-1.8), Javascript, HTML, CSS, R
+- IDE Tools : Eclipse, Sqldeveloper, R-studio
+- DB : Oracle 11g, HyperSQL 2.5.0
+- Library : jQuery, iQuery-UI, JSTL, Bootstrap-4.3.1
+
+## * ERD
+
+## * 시스템 아키텍쳐
    <img src="img/system_architecture.png"/><br>
    
-   [서비스 아키텍처]
+## * 서비스 아키텍쳐
    <img src="img/service_architecture.png"/><br>
    
    <img src="erd.JPG"/><br>
