@@ -78,7 +78,7 @@
 | **skill set** || Frontend - HTML, CSS, Javascript<br>Backend - Java, Python, C<br>DataBase - Oracle |
 | **자격증** | 2022.05 | SQLD ( 한국데이터산업진흥원 ) |
 | **교육이력** | 2022.03 ~ 2022.10 | 하나금융티아이 채용전환형 교육 1200시간( 한국폴리텍대학교 광명융합기술교육원 - 데이터분석과 ) |
-| **어학능력** | TOEIC 860 |
+| **어학능력** | 2021.10 | TOEIC 860 |
 
 
 
