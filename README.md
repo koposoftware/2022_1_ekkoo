@@ -30,7 +30,7 @@
    하나원큐레이터 프로젝트 설계 및 제작, Front-End/Back-End 개발
 
 ## * 주요기능
-   <img src="img/기능.png"/><br>
+   <img src="img/기능.png" width="640"/><br>
 
 ## * 사용기술
 - Spring-MVC 패턴
