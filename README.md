@@ -17,6 +17,10 @@
 
 # 3. 프로젝트 결과
 프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.
+   ###시스템 아키텍처
+   <img src="img/system_architecture.png"/><br>
+   
+   ###서비스 아키텍처
    <img src="img/service_architecture.png"/><br>
    
    <img src="erd.JPG"/><br>
