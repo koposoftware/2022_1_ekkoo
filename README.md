@@ -1,6 +1,6 @@
 # 자산관리부터 재무설계까지 원큐에, 하나원큐레이터
 
-[프로젝트 홈페이지 - https://koposoftware.github.io/2022_1_ekkoo//](https://koposoftware.github.io/2022_1_ekkoo/)
+[프로젝트 홈페이지 - https://koposoftware.github.io/2022_1_ekkoo/](https://koposoftware.github.io/2022_1_ekkoo/)
 
 # 1. 프로젝트 개요
 <img src="img/프로젝트배경.jpg" width="640"/><br>
