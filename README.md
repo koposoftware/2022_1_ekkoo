@@ -12,13 +12,12 @@
    <img src="img/ppt_cover1.jpg" width="640" /><br>
    [제안발표자료](/하나원큐레이터_제안발표.pptx)<br>
 <br> <br> 
-  <iframe width="424" height="238" src="https://www.youtube.com/embed/reOGfxYJre0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 3. 프로젝트 결과
 최종 프로젝트 결과입니다.
 ## * 발표 ppt 
    <img src="img/ppt_cover2.jpg" width="640" /><br>
-   [최종발표자료](/하나원큐레이터_제안발표.pptx)<br>
+   [최종발표자료](/하나원큐레이터_최종발표.pptx)<br>
 ## * 시연 동영상
 
 # 4. 프로젝트 결과 요약
@@ -37,7 +36,6 @@
 - Hometax OpenAPI 설계,제작,배포 
 - Spring MailSender, CoolSMS API를 사용한 이메일, 문자 알림
 - Spring Scheduler와 Spring Jsoup을 활용한 주식 평가금 실시간 업데이트
-
 
 ## * 개발환경
 - OS : Window10, Oracle Linux
