@@ -49,12 +49,12 @@
 - Apexcharts.js 를 활용한 데이터 시각화
 ## * 개발환경
 - OS : Window10, Oracle Linux
-- Framework : Spring Framework, Mybatis
+- Framework : Spring Framework, Mybatis, Bootstrap
 - Server : Apache Tomcat9
 - Language : Java(jdk-1.8), Python, Javascript, HTML, CSS 
 - IDE Tools : Eclipse, Sqldeveloper
 - DB : Oracle 19c
-- Library : jQuery, JSTL, Bootstrap, Datatables
+- Library : jQuery, JSTL, Datatables
 
 ## * ERD
    <img src="erd.JPG"/><br>
