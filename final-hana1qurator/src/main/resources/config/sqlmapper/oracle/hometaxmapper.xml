@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hometax.dao.hometaxDAO">
+	<resultMap type="kr.ac.kopo.hometax.vo.HometaxVO" id="hometaxMap">
+		<result column="credit_card" property="creditCard" />
+		<result column="debit_card" property="debitCard" />
+		<result column="cash_receipt" property="cashReceipt" />
+		<result column="national_pension" property="nationalPension" />
+		<result column="medical_expense" property="medicalExpense" />
+		<result column="education_expense" property="educationExpense" />
+	</resultMap>
+  <select id="getInfo" parameterType="String" resultMap="hometaxMap">
+    select * from t_hometax where telephone =${telephone}
+  </select>
+  <select id="gethometaxinfo" parameterType="kr.ac.kopo.member.vo.MemberVO" resultMap="hometaxMap">
+    select * from t_hometax where id = #{id} and password = #{password}
+  </select>
+</mapper>

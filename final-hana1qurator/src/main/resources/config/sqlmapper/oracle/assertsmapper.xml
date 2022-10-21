@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="asserts.dao.assertsDAO">
+	<resultMap type="kr.ac.kopo.account.vo.AccountVO"
+		id="accountMap">
+		<result column="owner_id" property="ownerId" />
+		<result column="account_no" property="accountNo" />
+		<result column="account_type" property="accountType" />
+		<result column="bank_code" property="bankCode" />
+		<result column="account_name" property="accountName" />
+		<result column="account_pwd" property="accountPwd" />
+		<result column="bank_photo" property="bankPhoto" />
+	</resultMap>
+	<resultMap type="kr.ac.kopo.stock.vo.StockVO" id="stockMap">
+		<result column="stock_code" property="stockCode" />
+		<result column="stock_name" property="stockName" />
+		<result column="stock_amount" property="stockAmount" />
+		<result column="bank_name" property="bankName" />
+		<result column="bank_account" property="bankAccount" />
+		<result column="bank_photo" property="bankPhoto"/> 
+		<result column="purchase_price" property="purchasePrice" />
+		<result column="purchase_quantity" property="purchaseQuantity" />
+		
+	</resultMap>
+	<resultMap type="kr.ac.kopo.loan.vo.LoanVO" id="loanMap">
+		<result column="loan_no" property="loanNo" />
+		<result column="bank_name" property="bankName" />
+		<result column="loan_alias" property="loanAlias" />
+		<result column="loan_balance" property="loanBalance" />
+		<result column="loan_principal" property="loanPrincipal" />
+		<result column="subscription_date" property="subscriptionDate" />
+		<result column="expiration_date" property="expirationDate" />
+		<result column="owner_id" property="ownerId" />
+		<result column="bank_photo" property="bankPhoto" />
+	</resultMap>
+    <!-- 모든 계좌 정보 -->
+	<select id="selectAll" parameterType="String"
+		resultMap="accountMap">
+		select account_no,account_type,bank_code,account_name,
+		balance, account_pwd, owner_id, bank_photo
+		from t_account
+		where owner_id = #{ownerId}
+	</select>
+	<!-- 입출금계좌 잔액 -->
+	<select id="selectBalance01" parameterType="String"
+		resultType="int">
+		select sum(balance) from t_account where
+		account_type='입출금계좌' and owner_id = #{ownerId}
+	</select>
+	<!-- 예적금 계좌 잔액 -->
+	<select id="selectBalance02" parameterType="String"
+		resultType="int">
+		select sum(balance) from t_account where
+		account_type='예적금계좌' and owner_id = #{ownerId}
+	</select>
+	<!-- 증권 계좌 잔액 -->
+	<select id="selectBalance03" parameterType="String"
+		resultType="int">
+		select sum(balance) from t_account where
+		account_type='증권계좌' and owner_id = #{ownerId}
+	</select>
+	<!-- 주식 정보 조회 -->
+	<select id="selectStock" parameterType="String" resultMap="stockMap">
+		select * from t_stock where owner_id = #{owner_id}
+	</select>
+	<!-- 모든 대출 정보  -->
+	<select id="selectAllLoan" parameterType="String" resultMap="loanMap">
+		select * from t_loan where owner_id = #{owner_id}
+	</select>
+	
+	<!-- 모든 주식 잔액 조회  -->
+	<select id="selectStockBalance" parameterType="String" resultType="int">
+		select nvl(sum(stock_amount),0) from t_stock where owner_id = #{owner_id}
+	</select>
+	<!-- 모든 대출 잔액 조회  -->
+	<select id="selectLoanBalance" parameterType="String" resultType="int">
+		select nvl(sum(loan_balance),0) from t_loan where owner_id = #{owner_id}
+	</select>
+	
+	<!-- 하나금융자산 -->
+	<!-- 계좌자산  -->
+	<select id="selectHanaAccountBalance" parameterType="String" resultType="int">
+		select  nvl(sum(balance),0) as hanaAccountBalance from t_account where owner_id=#{owner_id} and bank_code='하나은행'
+	</select>
+	<!-- 주식자산 -->
+	<select id="selectHanaStockBalance" parameterType="String" resultType="int">
+		select nvl(sum(stock_amount),0) as hanaStockBalance from t_stock where owner_id=#{owner_id} and bank_name='하나금융투자'
+	</select>
+	<!-- 대출자산 -->
+	<select id="selectHanaLoanBalance" parameterType="String" resultType="int">
+		select  nvl(sum(loan_balance),0) as hanaLoanBalance from t_loan where owner_id=#{owner_id} and bank_name='하나은행'
+	</select>
+	
+	<!-- 타금융자산 -->
+	<!-- 계좌자산  -->
+	<select id="selectOtherAccountBalance" parameterType="String" resultType="int">
+		select  nvl(sum(balance),0) as otherAccountBalance from t_account where owner_id=#{owner_id} and bank_code!='하나은행'
+	</select>
+	<!-- 주식자산 -->
+	<select id="selectOtherStockBalance" parameterType="String" resultType="int">
+		select nvl(sum(stock_amount),0) as otherStockBalance from t_stock where owner_id=#{owner_id} and bank_name!='하나금융투자'
+	</select>
+	<!-- 대출자산 -->
+	<select id="selectOtherLoanBalance" parameterType="String" resultType="int">
+		select  nvl(sum(loan_balance),0) as otherLoanBalance from t_loan where owner_id=#{owner_id} and bank_name!='하나은행'
+	</select>
+	<select id="getLoanInfo" parameterType="String" resultMap="loanMap">
+		select loan_alias, loan_balance, to_char(expiration_date,'yyyy-mm') as expiration_date from t_loan where owner_id=#{owner_id}
+	</select>
+	
+	<update id="updateStockAmount" parameterType="kr.ac.kopo.stock.vo.StockVO">
+		update t_stock set stock_amount=#{stockAmount}*purchase_quantity
+		where owner_id=#{ownerId} and stock_code=#{stockCode}
+	</update>
+	
+	<select id="selectAllHanaAccount" resultMap="accountMap">
+		select * from t_account where owner_id=#{owner_id} and bank_code='하나은행'
+	</select>
+	
+	<select id="selectAllOtherAccount" resultMap="accountMap">
+		select * from t_account where owner_id=#{owner_id} and bank_code!='하나은행'
+	</select>
+	
+	<update id="transferToHana" parameterType="java.util.HashMap" statementType="CALLABLE">
+		{CALL TRANSFER_TO_HANA (
+			#{hanaAccount},#{otherAccount},#{transferAmount}
+			
+		)}
+	</update>
+</mapper>

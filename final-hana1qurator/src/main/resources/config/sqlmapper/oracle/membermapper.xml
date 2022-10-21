@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member.dao.memberDAO">
+  <!-- login: 로그인  -->
+  <select id="login" parameterType="kr.ac.kopo.member.vo.MemberVO" resultType="kr.ac.kopo.member.vo.MemberVO">
+    select id,password,name,type,telephone,birth_year,open_banking from t_member where id=#{id} and password=#{password}
+  </select>
+  
+  <!-- insertMember : 회원가입 -->
+  <insert id="insertMember" parameterType="kr.ac.kopo.member.vo.MemberVO">
+  		insert into t_member (id,name,password,email,telephone,post,basic_addr,detail_addr,birthday) values (#{id},#{name},#{password},#{email},#{telephone},#{post},#{basic_addr},#{detail_addr},#{birthday})
+  </insert>
+  
+  <!-- update : 오픈뱅킹 가입  -->
+  <update id="joinOpenBaking" parameterType="String">
+  		update t_member set open_banking='y' where id=#{user_id}
+  </update>
+  <update id="recentAccessDate" parameterType="String">
+	{
+		CALL PROC_RECENT_ACCESS_DATE(#{id})
+	}
+  </update>
+  <update id="dormantToUser" statementType="CALLABLE">
+  	{
+  		CALL PROC_MEMBER_TYPE('D')
+  	}
+  </update>
+</mapper>

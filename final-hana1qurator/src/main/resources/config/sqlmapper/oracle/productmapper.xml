@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product.dao.productDAO">
+	<resultMap type="kr.ac.kopo.product.vo.TermDepositVO"
+		id="termDepositMap">
+		<result column="product_no" property="productNo" />
+		<result column="product_name" property="productName" />
+		<result column="rep_desc" property="repDesc" />
+		<result column="max_interest_rate" property="maxInterestRate" />
+		<result column="min_period" property="minPeriod" />
+		<result column="max_period" property="maxPeriod" />
+		<result column="interest_rate" property="interestRate" />
+	</resultMap>
+	<resultMap type="kr.ac.kopo.product.vo.PensionVO"
+		id="pensionMap">
+		<result column="pension_type" property="pensionType" />
+		<result column="pension_name" property="pensionName" />
+		<result column="insurance_company" property="insuranceCompany" />
+		<result column="interest_rate" property="interestRate" />
+		<result column="rep_desc" property="repDetail" />
+	</resultMap>
+	<resultMap type="kr.ac.kopo.product.vo.SavingsVO"
+		id="savingsMap">
+		<result column="product_no" property="productNo" />
+		<result column="product_name" property="productName" />
+		<result column="rep_desc" property="repDesc" />
+		<result column="max_interest_rate" property="maxInterestRate" />
+		<result column="min_period" property="minPeriod" />
+		<result column="max_period" property="maxPeriod" />
+		<result column="interest_rate" property="interestRate" />
+	</resultMap>
+
+	<!-- 모든 정기 예금 정보 -->
+	<select id="selectAllTermDeposit" resultMap="termDepositMap">
+		select * from
+		t_term_deposit
+	</select>
+
+	<select id="recommendSavings" resultMap="termDepositMap">
+		select * from
+		t_term_deposit
+		where benefit_code='주택'
+	</select>
+
+	<!-- 연금 -->
+	<!--1.연금보험추천 -->
+	<select id="pension01Recommend" resultMap="pensionMap">
+		select * from(
+		select *
+		from t_pension
+		where pension_type='01'
+		order by interest_rate desc)
+		where rownum &lt;= 1
+	</select>
+	<select id="pension01Recommend3" resultMap="pensionMap">
+		select * from(
+		select *
+		from t_pension
+		where pension_type='01'
+		order by interest_rate desc)
+		where rownum &lt;= 3
+	</select>
+	<!--2.연금저축보험추천 -->
+	<select id="pension02Recommend" resultMap="pensionMap">
+		select * from(
+		select *
+		from t_pension
+		where pension_type='02'
+		order by interest_rate desc)
+		where rownum &lt;= 1
+	</select>
+
+	<!-- 적금추천 -->
+	<select id="savingsRecommend" parameterType="int"
+		resultMap="savingsMap">
+		select  c.product_no,c.product_name,c.rep_desc,
+		to_char(c.interest_rate,'FM90.0') as
+		interest_rate,c.min_period,c.max_period 
+		from(select a.product_no, a.product_name,a.rep_desc,b.interest_rate,b.min_period,b.max_period
+		from t_product_savings a, t_product_savings_detail b
+		where a.product_no =
+		b.product_no
+		and min_period &lt;= #{period} and max_period &gt;
+		#{period}
+		order by interest_rate desc) c
+		where rownum &lt;= 1
+	</select>
+	<select id="savingsRecommend3" parameterType="int"
+		resultMap="savingsMap">
+		select  c.product_no,c.product_name,c.rep_desc,
+		to_char(c.interest_rate,'FM90.0') as
+		interest_rate,c.min_period,c.max_period 
+		from(select a.product_no, a.product_name,a.rep_desc,b.interest_rate,b.min_period,b.max_period
+		from t_product_savings a, t_product_savings_detail b
+		where a.product_no =
+		b.product_no
+		and min_period &lt;= #{period} and max_period &gt;
+		#{period}
+		order by interest_rate desc) c
+		where rownum &lt;= 3
+	</select>
+	<insert id="savingsInsert"
+		parameterType="kr.ac.kopo.account.vo.AccountVO">
+		insert into t_account 
+		(account_no,account_type,bank_code,account_name,balance,account_pwd,owner_id,bank_photo)
+		values
+		(#{accountNo},#{accountType},#{bankCode},#{accountName},#{balance},#{accountPwd},#{ownerId},#{bankPhoto})
+	</insert>
+	<select id="getAccountRandomNumber" resultType="String">
+		select
+		trunc(dbms_random.value(100000000000000,100999999999999))
+		as random_num from dual
+	</select>
+	
+	<select id="getSavingsInfoByNo" parameterType="String" resultMap="savingsMap">
+		select * from t_product_savings where product_no = #{productNo}
+	</select>
+	
+	<!-- 예금추천 -->
+	<select id="termDepositRecommend" parameterType="int"
+		resultMap="termDepositMap">
+		select  c.product_no,c.product_name,c.rep_desc,
+		to_char(c.interest_rate,'FM90.0') as
+		interest_rate,c.min_period,c.max_period 
+		from(select a.product_no, a.product_name,a.rep_desc,b.interest_rate,b.min_period,b.max_period
+		from t_product_term_deposit a, t_product_term_deposit_detail b
+		where a.product_no =
+		b.product_no
+		and min_period &lt;= #{period} and max_period &gt; #{period}
+		order by interest_rate desc) c
+		where rownum &lt;= 1
+	</select>
+	<select id="termDepositRecommend3" parameterType="int"
+		resultMap="termDepositMap">
+		select  c.product_no,c.product_name,c.rep_desc,
+		to_char(c.interest_rate,'FM90.0') as
+		interest_rate,c.min_period,c.max_period 
+		from(select a.product_no, a.product_name,a.rep_desc,b.interest_rate,b.min_period,b.max_period
+		from t_product_term_deposit a, t_product_term_deposit_detail b
+		where a.product_no =
+		b.product_no
+		and min_period &lt;= #{period} and max_period &gt; #{period}
+		order by interest_rate desc) c
+		where rownum &lt;= 2
+	</select>
+</mapper>

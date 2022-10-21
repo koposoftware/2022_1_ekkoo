@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="transaction.dao.transactionDAO">
+	<resultMap type="kr.ac.kopo.cardtransaction.vo.CardTransactionVO" id="transactionMap">
+		<result column="trans_date" property="transDate" />
+		<result column="trans_amount" property="transAmount" />
+		<result column="trans_type" property="transType" />
+		<result column="consume_type" property="consumeType" />
+		<result column="consume_store" property="consumeStore" />
+		<result column="card_no" property="cardNo" />
+	</resultMap>
+	<select id="selectAllCardTransaction" parameterType="String" resultMap="transactionMap">
+		select * from t_card_transaction where card_no = #{card_no}
+		order by trans_date
+	</select>
+		<!-- 저번달 소비내역 top -->
+	<select id="top3consume" parameterType="String" resultMap="transactionMap">
+		select
+		trans_date,
+		trans_amount,consume_type
+		from(
+		select extract(month from sysdate)-1 as trans_date,
+		sum(trans_amount) as trans_amount,consume_type,owner_id
+		from t_card_transaction a, t_card b
+		where b.owner_id = #{ownerId} and a.card_no = b.card_no
+		group by consume_type,owner_id
+		order by trans_amount desc)
+		where rownum &lt; 4
+	</select>
+</mapper>

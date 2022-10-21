@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="card.dao.cardDAO">
+	<resultMap type="kr.ac.kopo.card.vo.CardVO" id="cardMap">
+		<result column="owner_id" property="ownerId" />
+		<result column="card_no" property="cardNo" />
+		<result column="card_name" property="cardName" />
+		<result column="bank_code" property="bankName" />
+		<result column="card_type" property="cardType" />
+		<result column="card_photo" property="cardPhoto" />
+	</resultMap>
+	<resultMap type="kr.ac.kopo.consume.vo.ConsumeVO"
+		id="consumeMap">
+		<result column="패션/쇼핑" property="fashion" />
+		<result column="카페/간식" property="cafe" />
+		<result column="식비" property="food" />
+		<result column="교통" property="driving" />
+		<result column="의료/건강" property="health" />
+		<result column="생활/쇼핑" property="living" />
+	</resultMap>
+	<select id="selectAllCard" parameterType="String"
+		resultMap="cardMap">
+		select * from t_card where owner_id = #{owner_id}
+	</select>
+	<select id="sysmonthConsume" parameterType="String"
+		resultMap="consumeMap">
+		select *
+		from (select consume_type, trans_amount from
+		t_card_transaction
+		where (card_no= #{cardNo}) and (extract(month from
+		trans_date)=extract(month from sysdate)))
+		pivot(sum(trans_amount) for
+		consume_type in ('패션/쇼핑','카페/간식','식비','교통','의료/건강','생활/쇼핑'))
+
+	</select>
+	
+</mapper>
