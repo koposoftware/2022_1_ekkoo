@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product.dao.productDAO">
+	<insert id="insertPension" parameterType="kr.ac.kopo.product.vo.PensionVO">
+		insert into t_pension (product_no,pension_type,pension_name,insurance_company,interest_rate,rep_desc) 
+		values (SEQ_T_PENSION_NO.nextval,#{pensionType},#{pensionName},#{insuranceCompany},#{interestRate},#{repDetail})	
+	</insert>
+	
+</mapper>

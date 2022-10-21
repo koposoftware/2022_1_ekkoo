@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member.dao.memberDAO">
+	<resultMap type="kr.ac.kopo.member.vo.MemberVO"
+		id="memberMap">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="telephone" property="telephone" />
+		<result column="gender" property="gender" />
+		<result column="email" property="email" />
+		<result column="type" property="type" />
+		<result column="reg_date" property="regDate" />
+		<result column="recent_access_date" property="recentAccessDate" />
+		<result column="open_banking" property="openBanking" />
+	</resultMap>
+	<select id="getDormant" resultType="int">
+		select count(*) from t_member where member_type='D'
+	</select>
+	<select id="genderRatio" resultType="Map">
+		select *
+		from (
+		select gender
+		from t_member
+		)
+		pivot(
+		count(*) for gender in ('w' as WOMAN,'m' as MAN)
+		)
+	</select>
+	<select id="selectAllMember" resultMap="memberMap">
+		select id
+		,substr(name,1,1) || lpad('*',length(name)-2,'*') || substr(name,
+		length(name), 1) as name
+		,decode(gender,'w','여','m','남') as gender
+		,telephone
+		,email
+		,to_char(reg_date,'yyyy-mm-dd') as reg_date
+		,recent_access_date
+		,member_type as type
+		from t_member
+	</select>
+	<select id="countNewMemberOfLastWeek" resultType="int">
+		select count(*)
+		from t_member
+		where to_char(reg_date,'yyyy-mm-dd') &gt; (SELECT
+		TRUNC(sysdate, 'd')-7 지난주일요일
+		FROM DUAL)
+		and
+		to_char(reg_date,'yyyy-mm-dd') &lt; (SELECT TRUNC(sysdate,'d')-1
+		지난주토요일
+		FROM DUAL)
+	</select>
+	<select id="countAllMember" resultType="int">
+		select count(*) from
+		t_member
+	</select>
+	<select id="countMemberByAge" resultType="Map">
+		select * from
+		(select case
+		when age between 10 and 19 then '10대'
+		when age between 20 and 29
+		then '20대'
+		when age between 30 and 39 then '30대'
+		when age between 40 and
+		49 then '40대'
+		when age between 50 and 59 then '50대'
+		when age between 60
+		and 69 then '60대'
+		when age between 70 and 79 then '70대'
+		when age between
+		80 and 89 then '80대'
+		else '기타'
+		end age
+		from(
+		select extract(year from
+		sysdate)-extract(year from birthday)+1 as age
+		from t_member)
+		)
+		pivot (
+		count(*) for age in ('10대' as A10,'20대' as A20,
+		'30대' as A30,'40대' as A40,'50대' as A50,'60대' as A60,'70대' as A70,'80대' as
+		A80,'기타' as etc)
+		)
+
+	</select>
+	<select id="genderMap" resultType="Map">
+		select gender,count(*) from t_member
+		group by gender
+	</select>
+</mapper>
