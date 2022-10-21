@@ -67,7 +67,7 @@
 하나원큐레이터의 재무설계시, 자동으로 나의 신용정보를 불러오는 기능을 구현하기 위해 가상의 홈택스 OpenAPI를 개발/서버 구축/배포를 하였습니다.<br> 
 <img src="img/api.png" width="640"/><br> 
 <img src="img/ppt_cover1.jpg" width="640" /><br>
-[openAPI명세서](/openAPI명세서.hwp)<br>
+[openAPI명세서]다운로드 받기<br>
 <br> <br> 
 # 5. 본인 소개
 | 항목      | 내용                | 내용         |
