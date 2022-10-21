@@ -45,7 +45,8 @@
 - Hometax OpenAPI 설계,제작,배포 
 - Spring MailSender, CoolSMS API를 사용한 이메일, 문자 알림
 - Spring Scheduler와 Spring Jsoup을 활용한 주식 평가금 실시간 업데이트
-
+- Spring Scheduler와 Spring Jsoup을 활용한 주식 평가금 실시간 업데이트
+- Apexcharts.js 를 활용한 데이터 시각화
 ## * 개발환경
 - OS : Window10, Oracle Linux
 - Framework : Spring Framework, Mybatis
