@@ -26,6 +26,7 @@
    [최종발표자료](/하나원큐레이터_최종발표.pdf)<br>
 ## * 시연 동영상
    [![영상](img/mainPage.png)](https://youtu.be/q7JSWscW8a8)
+   <br>
    *사진을 누르시면 영상 유튜브 사이트로 이동합니다
 <br><br>
 
