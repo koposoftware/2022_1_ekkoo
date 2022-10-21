@@ -26,6 +26,9 @@
    [최종발표자료](/하나원큐레이터_최종발표.pptx)<br>
 ## * 시연 동영상
    <iframe width="762" height="411" src="https://www.youtube.com/embed/q7JSWscW8a8" title="웹개발프로젝트_하나원큐레이터_시연영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br><br>
+
+
 # 4. 프로젝트 결과 요약
 
 ## * 수행기간
