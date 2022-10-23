@@ -49,6 +49,7 @@
 - Spring Scheduler와 Spring Jsoup을 활용한 주식 평가금 실시간 업데이트
 - Spring Scheduler와 Spring Jsoup을 활용한 주식 평가금 실시간 업데이트
 - Apexcharts.js 를 활용한 데이터 시각화
+
 ## * 개발환경
 - OS : Window10, Oracle Linux
 - Framework : Spring Framework, Mybatis, Bootstrap
@@ -66,13 +67,14 @@
 ## * 서비스 아키텍쳐
    <img src="img/service_architecture.png" width="640"/><br>
 <br> <br>      
-# 4. OpenAPI 제작
+# 5. OpenAPI 제작
 하나원큐레이터의 재무설계시, 자동으로 나의 신용정보를 불러오는 기능을 구현하기 위해 가상의 홈택스 OpenAPI를 개발/서버 구축/배포를 하였습니다.<br> 
+
 <img src="img/api.png" width="640"/><br> 
-[openAPI명세서](/openAPI명세서.hwp)<br>
+
 <br> <br> 
 
-# 5. 본인 소개
+# 6. 본인 소개
 
 |항목|내용||
 |-----|---------------------------|----|
