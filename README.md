@@ -60,7 +60,7 @@
 - Library : jQuery, JSTL, Datatables
 
 ## * ERD
-   <img src="img/erd.jpg" width="640"/><br>
+   <img src="img/erd.jpg" width="800"/><br>
 ## * 시스템 아키텍쳐
    <img src="img/system_architecture.png" width="640"/><br>
    
