@@ -35,7 +35,9 @@
 
 ## * 수행기간
    2022-09-16 ~ 2022-10-24
-
+   
+   프로젝트 진행 간트 차트입니다<br>
+    <img src="img/gantchart.png" width="640"/><br>
 ## * 담당업무
    하나원큐레이터 프로젝트 설계 및 제작, Front-End/Back-End 개발
 
@@ -62,7 +64,7 @@
 ## * ERD
    <img src="img/erd.jpg" width="800"/><br>
 ## * 시스템 아키텍쳐
-   <img src="img/system_architecture.png" width="640"/><br>
+   <img src="img/시스템아키텍처.png" width="640"/><br>
    
 ## * 서비스 아키텍쳐
    <img src="img/service_architecture.png" width="640"/><br>
