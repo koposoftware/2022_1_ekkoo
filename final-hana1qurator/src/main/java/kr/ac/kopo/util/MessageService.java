@@ -14,13 +14,13 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 public class MessageService {
 
 	public void sendMessage(String toNumber, String message) {
-		String apiKey = "NCSVIK8OZK0DKJKW";
-		String apiSecret = "VBGPUDTG1BXLIXVRTRDD4TV6K4XUIDYA";
+		String apiKey = "yourApiKey";
+		String apiSecret = "yourApiSecret";
 		Message coolsms = new Message(apiKey, apiSecret);
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		
-		String fromNumber ="01020617815";
+		String fromNumber ="writeFromNumber";
 		params.put("to", toNumber);
 		params.put("from", fromNumber);
 		params.put("type", "SMS");
